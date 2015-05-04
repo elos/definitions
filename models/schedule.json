@@ -1,0 +1,46 @@
+{
+    "version": "1.0.0",
+    "kind": "schedule",
+    "space": "schedules",
+    "domains": ["schedules"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "start_time",
+            "type": "datetime"
+        },
+        {
+            "name": "end_time",
+            "type": "datetime"
+        }
+    ],
+    "links": [
+        {
+            "name": "user",
+            "multiplicity":"one",
+            "codomain": "users"
+        },
+        {
+            "name": "fixtures",
+            "multiplicity": "mul",
+            "singular": "fixture",
+            "codomain": "fixtures"
+        }
+    ]
+}

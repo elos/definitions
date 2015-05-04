@@ -1,0 +1,79 @@
+{
+    "version": "1.0.0",
+
+    "kind": "user",
+    "space": "users",
+    "domains": ["users"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id",
+            "desc": ""
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "key",
+            "type": "string"
+        }
+    ],
+
+    "links": [
+        {
+            "name": "actions",
+            "multiplicity": "mul",
+            "singular": "action",
+            "codomain": "actions",
+            "inverse": "user"
+        },
+        {
+            "name": "events",
+            "multiplicity": "mul",
+            "singular": "event",
+            "codomain": "events",
+            "inverse": "user"
+        },
+        {
+            "name": "tasks",
+            "multiplicity": "mul",
+            "singular": "task",
+            "codomain": "tasks",
+            "inverse": "user"
+        },
+        {
+            "name": "routines",
+            "multiplicity": "mul",
+            "singular": "routine",
+            "codomain": "routines",
+            "inverse": "user"
+        },
+        {
+            "name": "calendar",
+            "multiplicity": "one",
+            "codomain":"calendars",
+            "inverse": "user"
+        },
+        {
+            "name": "ontology",
+            "multiplicity": "one",
+            "codomain": "ontologies",
+            "inverse": "user"
+        },
+        {
+            "name": "current_actionable",
+            "multiplicity": "one",
+            "codomain": "actionable"
+        }
+    ]
+}

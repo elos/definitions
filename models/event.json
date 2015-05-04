@@ -1,0 +1,43 @@
+{
+    "version": "1.0.0",
+
+    "kind": "event",
+    "space": "events",
+    "domains": ["events"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "start_time",
+            "type": "datetime"
+        },
+        {
+            "name": "end_time",
+            "type": "datetime"
+        }
+    ],
+
+    "links": [
+        {
+            "name": "user",
+            "multiplicity": "one",
+            "codomain": "users",
+            "inverse": "events"
+        }
+    ]
+}

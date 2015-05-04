@@ -1,0 +1,40 @@
+{
+    "version": "1.0.0",
+    "kind": "relation",
+    "space": "relations",
+    "domains": ["relations"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "ids",
+            "type": "[]id"
+        }
+    ],
+
+    "links": [
+        {
+            "name": "object",
+            "multiplicity": "one",
+            "codomain": "objects",
+            "inverse": "relations"
+        },
+        {
+            "name": "link",
+            "multiplicity": "one",
+            "codomain": "links",
+            "inverse": "relations"
+        }
+    ]
+}

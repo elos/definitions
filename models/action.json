@@ -1,0 +1,57 @@
+{
+    "version": "1.0.0",
+
+    "kind": "action",
+    "space": "actions",
+    "domains": ["actions"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "start_time",
+            "type": "datetime"
+        },
+        {
+            "name": "end_time",
+            "type": "datetime"
+        },
+        {
+            "name": "completed",
+            "type": "boolean"
+        }
+    ],
+
+    "links": [
+        {
+            "name": "user",
+            "multiplicity": "one",
+            "codomain": "users",
+            "inverse": "actions"
+        },
+        {
+            "name": "actionable",
+            "multiplicity": "one",
+            "codomain":"actionable"
+        },
+        {
+            "name": "task",
+            "multiplicity": "one",
+            "codomain":"tasks"
+        }
+    ]
+}

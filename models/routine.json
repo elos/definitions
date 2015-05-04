@@ -1,0 +1,64 @@
+{
+    "version": "1.0.0",
+    "kind": "routine",
+    "space": "routines",
+    "domains": ["routines", "actionable"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "start_time",
+            "type": "datetime"
+        },
+        {
+            "name": "end_time",
+            "type": "datetime"
+        }
+    ],
+    "links": [
+        {
+            "name": "user",
+            "multiplicity":"one",
+            "codomain": "users",
+            "inverse": "routines"
+        },
+        {
+            "name": "tasks",
+            "multiplicity": "mul",
+            "singular": "task",
+            "codomain": "tasks"
+        },
+        {
+            "name": "completed_tasks",
+            "multiplicity": "mul",
+            "singular": "completed_task",
+            "codomain": "tasks"
+        },
+        {
+            "name": "actions",
+            "multiplicity":"mul",
+            "singular": "action",
+            "codomain": "actions"
+        },
+        {
+            "name": "current_action",
+            "multiplicity":"one",
+            "codomain": "actions"
+        }
+    ]
+}

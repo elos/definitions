@@ -1,0 +1,40 @@
+{
+    "version": "1.0.0",
+    "kind": "attribute",
+    "space": "attributes",
+    "domains": ["attributes"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "value",
+            "type": "string"
+        }
+    ],
+
+    "links": [
+        {
+            "name": "object",
+            "multiplicity": "one",
+            "codomain": "objects",
+            "inverse": "attributes"
+        },
+        {
+            "name": "trait",
+            "multiplicity": "one",
+            "codomain": "traits",
+            "inverse": "attributes"
+        }
+    ]
+}

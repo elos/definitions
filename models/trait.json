@@ -1,0 +1,46 @@
+{
+    "version": "1.0.0",
+
+    "kind": "trait",
+    "space": "traits",
+    "domains": ["traits"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "type",
+            "type": "string"
+        }
+    ],
+
+    "links": [
+        {
+            "name": "class",
+            "multiplicity": "one",
+            "codomain": "classes",
+            "inverse": "traits"
+        },
+        {
+            "name": "attributes",
+            "multiplicity": "mul",
+            "singular": "attribute",
+            "codomain": "attributes",
+            "inverse": "trait"
+        }
+    ]
+}

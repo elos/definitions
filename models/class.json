@@ -1,0 +1,65 @@
+{
+    "version": "1.0.0",
+
+    "kind": "class",
+    "space": "classes",
+    "domains": ["classes"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "key",
+            "type": "string"
+        }
+    ],
+
+    "links": [
+        {
+            "name": "traits",
+            "multiplicity": "mul",
+            "singular": "trait",
+            "codomain": "traits",
+            "inverse": "class"
+        },
+        {
+            "name": "links",
+            "multiplicity": "mul",
+            "singular": "link",
+            "codomain": "links",
+            "inverse": "class"
+        },
+        {
+            "name": "user",
+            "multiplicity": "one",
+            "codomain": "users"
+        },
+        {
+            "name": "ontology",
+            "multiplicity": "one",
+            "codomain": "ontologies",
+            "inverse": "classes"
+        },
+        {
+            "name": "objects",
+            "multiplicity": "mul",
+            "singular": "object",
+            "codomain": "objects",
+            "inverse": "class"
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+{
+    "version": "1.0.0",
+
+    "kind": "fixture",
+    "space": "fixtures",
+    "domains": ["fixtures", "actionable", "eventable"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "start_time",
+            "type": "datetime"
+        },
+        {
+            "name": "end_time",
+            "type": "datetime"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "rank",
+            "type": "integer"
+        },
+        {
+            "name": "label",
+            "type": "boolean"
+        },
+        {
+            "name": "expires",
+            "type": "datetime"
+        },
+        {
+            "name": "date_exceptions",
+            "type": "[]datetime"
+        }
+    ],
+
+    "links": [
+        {
+            "name": "user",
+            "multiplicity": "one",
+            "codomain": "users"
+        },
+        {
+            "name": "actionable",
+            "multiplicity": "one",
+            "codomain": "actionable"
+        },
+        {
+            "name": "eventable",
+            "multiplicity": "one",
+            "codomain": "eventable"
+        },
+        {
+            "name": "actions",
+            "multiplicity": "mul",
+            "singular": "action",
+            "codomain": "actions"
+        },
+        {
+            "name": "events",
+            "multiplicity": "mul",
+            "singular": "event",
+            "codomain": "events"
+        }
+    ]
+}

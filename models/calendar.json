@@ -1,0 +1,53 @@
+{
+    "version": "1.0.0",
+
+    "kind": "calendar",
+    "space": "calendars",
+    "domains": ["calendars"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "weekday_schedules",
+            "type": "map[string]id"
+        },
+        {
+            "name": "yearday_schedules",
+            "type": "map[string]id"
+        }
+    ],
+
+    "links": [
+        {
+            "name": "user",
+            "multiplicity": "one",
+            "codomain": "users",
+            "inverse": "actions"
+        },
+        {
+            "name": "base_schedule",
+            "multiplicity": "one",
+            "codomain": "schedules"
+        },
+        {
+            "name": "current_fixture",
+            "multiplicity": "one",
+            "codomain":"fixtures"
+        }
+    ]
+}

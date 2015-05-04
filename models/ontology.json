@@ -1,0 +1,43 @@
+{
+    "version": "1.0.0",
+    "kind": "ontology",
+    "space": "ontologies",
+    "domains": ["ontologies"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        }
+    ],
+    "links": [
+        {
+            "name": "user",
+            "multiplicity":"one",
+            "codomain": "users",
+            "inverse": "ontology"
+        },
+        {
+            "name": "classes",
+            "multiplicity":"mul",
+            "singular": "class",
+            "codomain": "classes",
+            "inverse": "ontology"
+        },
+        {
+            "name": "objects",
+            "multiplicity":"mul",
+            "singular": "object",
+            "codomain": "objects",
+            "inverse": "ontology"
+        }
+    ]
+}
