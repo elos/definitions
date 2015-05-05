@@ -1,0 +1,27 @@
+{
+    "name": "api",
+    "host": "api.elos.io",
+
+    "endpoints": [
+        {
+            "name": "authentication",
+            "path": "auth",
+            "actions": ["POST", "OPTIONS"]
+        },
+        {
+            "name": "action",
+            "path": "/actions",
+            "actions": ["GET", "POST", "DELETE", "OPTIONS"]
+        },
+        {
+            "name": "attribute",
+            "path": "/attributes",
+            "actions": ["GET", "POST", "DELETE", "OPTIONS"]
+        },
+        {
+            "name": "users",
+            "path": "/users",
+            "actions": ["GET", "POST", "DELETE", "OPTIONS"]
+        }
+    ]
+}

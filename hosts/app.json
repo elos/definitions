@@ -1,0 +1,126 @@
+{
+    "name": "app",
+    "host": "app.elos.io",
+
+    "endpoints": [
+        {
+            "name": "landing",
+            "path": "/",
+            "actions": ["GET"],
+            "auth": "none"
+        },
+        {
+            "name": "sessions",
+            "path": "/sessions",
+            "actions": ["GET"],,
+            "auth": "none",
+            "endpoints": [
+                {
+                    "name": "sign_in",
+                    "path": "/sign_in",
+                    "actions": ["GET", "POST"],
+                    "auth": "none"
+                },
+                {
+                    "name": "register",
+                    "path": "/register",
+                    "actions": ["GET", "POST"],
+                    "auth": "none"
+                }
+            ]
+        },
+        {
+            "name": "user",
+            "path": "user",
+            "actions": ["GET"],
+            "auth": "user",
+            "endpoints": [
+                {
+                    "name": "interactive",
+                    "path": "/interactive",
+                    "actions": ["GET"]
+                },
+                {
+                    "name": "calendar",
+                    "path": "/calendar",
+                    "actions": ["GET"]
+                },
+                {
+                    "name": "events",
+                    "path": "/events",
+                    "actions": ["GET"]
+                },
+                {
+                    "name": "tasks",
+                    "path": "/tasks",
+                    "actions": ["GET"]
+                },
+                {
+                    "name": "routines",
+                    "path": "/routines",
+                    "actions": ["GET"]
+                },
+                {
+                    "name": "schedules",
+                    "path": "/schedules",
+                    "actions": ["GET"],
+                    "endpoints": [
+                        {
+                            "name": "base",
+                            "path": "/base",
+                            "actions": ["GET"],
+                            "endpoints": [
+                                {
+                                    "name": "fixtures",
+                                    "path": "/fixtures/:fixture_id",
+                                    "actions": ["GET", "POST", "DELETE"],
+                                    "endpoints":[
+                                        {
+                                            "name": "create",
+                                            "path": "/create",
+                                            "actions": ["GET"]
+                                        },
+                                        {
+                                            "name": "edit",
+                                            "path": "/edit",
+                                            "actions": ["GET"]
+                                        },
+                                        {
+                                            "name": "delete",
+                                            "path": "/delete",
+                                            "actions": ["GET"]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "weekly",
+                            "path": "/weekly",
+                            "actions": ["GET"],
+                            "endpoints": [
+                                {
+                                    "name": "weekday",
+                                    "path": "/:weekday",
+                                    "actions": ["GET"]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "yearly",
+                            "path": "/yearly",
+                            "actions": ["GET"],
+                            "endpoints": [
+                                {
+                                    "name": "yearday",
+                                    "path": "/:yearday",
+                                    "actions": ["GET"]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
