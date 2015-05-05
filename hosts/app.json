@@ -12,7 +12,7 @@
         {
             "name": "sessions",
             "path": "/sessions",
-            "actions": ["GET"],,
+            "actions": ["GET"],
             "auth": "none",
             "endpoints": [
                 {
