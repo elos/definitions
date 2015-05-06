@@ -33,7 +33,7 @@
         },
         {
             "name": "user",
-            "path": "user",
+            "path": "/user",
             "actions": ["GET"],
             "auth": "user",
             "endpoints": [
