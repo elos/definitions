@@ -19,13 +19,15 @@
                     "name": "sign_in",
                     "path": "/sign_in",
                     "actions": ["GET", "POST"],
-                    "auth": "none"
+                    "auth": "none",
+                    "requires": ["DB"]
                 },
                 {
                     "name": "register",
                     "path": "/register",
                     "actions": ["GET", "POST"],
-                    "auth": "none"
+                    "auth": "none",
+                    "requires": ["DB"]
                 }
             ]
         },
@@ -38,37 +40,44 @@
                 {
                     "name": "interactive",
                     "path": "/interactive",
-                    "actions": ["GET"]
+                    "actions": ["GET"],
+                    "requires": ["DB"]
                 },
                 {
                     "name": "calendar",
                     "path": "/calendar",
-                    "actions": ["GET"]
+                    "actions": ["GET"],
+                    "requires": ["DB"]
                 },
                 {
                     "name": "events",
                     "path": "/events",
-                    "actions": ["GET"]
+                    "actions": ["GET"],
+                    "requires": ["DB"]
                 },
                 {
                     "name": "tasks",
                     "path": "/tasks",
-                    "actions": ["GET"]
+                    "actions": ["GET"],
+                    "requires": ["DB"]
                 },
                 {
                     "name": "routines",
                     "path": "/routines",
-                    "actions": ["GET"]
+                    "actions": ["GET"],
+                    "requires": ["DB"]
                 },
                 {
                     "name": "schedules",
                     "path": "/schedules",
                     "actions": ["GET"],
+                    "requires": ["DB"],
                     "endpoints": [
                         {
                             "name": "base",
                             "path": "/base",
                             "actions": ["GET"],
+                            "requires": ["DB"],
                             "endpoints": [
                                 {
                                     "name": "fixtures",
@@ -78,17 +87,20 @@
                                         {
                                             "name": "create",
                                             "path": "/create",
-                                            "actions": ["GET"]
+                                            "actions": ["GET"],
+                                            "requires": ["DB"]
                                         },
                                         {
                                             "name": "edit",
                                             "path": "/edit",
-                                            "actions": ["GET"]
+                                            "actions": ["GET"],
+                                            "requires": ["DB"]
                                         },
                                         {
                                             "name": "delete",
                                             "path": "/delete",
-                                            "actions": ["GET"]
+                                            "actions": ["GET"],
+                                            "requires": ["DB"]
                                         }
                                     ]
                                 }
@@ -98,11 +110,13 @@
                             "name": "weekly",
                             "path": "/weekly",
                             "actions": ["GET"],
+                            "requires": ["DB"],
                             "endpoints": [
                                 {
                                     "name": "weekday",
                                     "path": "/:weekday",
-                                    "actions": ["GET"]
+                                    "actions": ["GET"],
+                                    "requires": ["DB"]
                                 }
                             ]
                         },
@@ -110,11 +124,13 @@
                             "name": "yearly",
                             "path": "/yearly",
                             "actions": ["GET"],
+                            "requires": ["DB"],
                             "endpoints": [
                                 {
                                     "name": "yearday",
                                     "path": "/:yearday",
-                                    "actions": ["GET"]
+                                    "actions": ["GET"],
+                                    "requires": ["DB"]
                                 }
                             ]
                         }
