@@ -29,6 +29,10 @@
         {
             "name": "end_time",
             "type": "datetime"
+        },
+        {
+            "name": "tags",
+            "type": "[]string"
         }
     ],
 
