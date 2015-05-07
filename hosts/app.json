@@ -83,6 +83,7 @@
                                     "name": "fixtures",
                                     "path": "/fixtures/:fixture_id",
                                     "actions": ["GET", "POST", "DELETE"],
+                                    "requires": ["db"],
                                     "endpoints":[
                                         {
                                             "name": "create",
