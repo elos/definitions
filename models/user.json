@@ -26,6 +26,10 @@
         {
             "name": "key",
             "type": "string"
+        },
+        {
+            "name": "public_keys",
+            "type": "[]string"
         }
     ],
 
