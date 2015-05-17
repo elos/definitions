@@ -71,6 +71,11 @@
             "inverse": "user"
         },
         {
+            "name": "current_action",
+            "multiplicity": "one",
+            "codomain": "actions"
+        },
+        {
             "name": "current_actionable",
             "multiplicity": "one",
             "codomain": "actionable"
