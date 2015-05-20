@@ -41,6 +41,12 @@
                     "name": "interactive",
                     "path": "/interactive",
                     "actions": ["GET"],
+                    "requires": ["db"]
+                },
+                {
+                    "name": "repl",
+                    "path": "/repl",
+                    "actions": ["GET"],
                     "requires": ["db", "agents"]
                 },
                 {
