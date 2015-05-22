@@ -1,33 +1,46 @@
 {
     "name": "app",
     "host": "app.elos.io",
+    "port": 8000,
+
+    "middleware": [
+        "user-auth"
+    ],
+
+    "services": [
+        "agents",
+        "db",
+        "sessions"
+    ],
 
     "endpoints": [
         {
             "name": "landing",
             "path": "/",
-            "actions": ["GET"],
-            "auth": "none"
+            "actions": ["GET"]
         },
         {
             "name": "sessions",
             "path": "/sessions",
             "actions": ["GET"],
-            "auth": "none",
-            "endpoints": [
+            "subpoints": [
                 {
                     "name": "sign_in",
                     "path": "/sign_in",
                     "actions": ["GET", "POST"],
-                    "auth": "none",
-                    "requires": ["db", "sessions"]
+                    "services": {
+                        "GET": ["db", "sessions"],
+                        "POST": ["db", "sessions"]
+                    }
                 },
                 {
                     "name": "register",
                     "path": "/register",
                     "actions": ["GET", "POST"],
-                    "auth": "none",
-                    "requires": ["db"]
+                    "services": {
+                        "GET": ["db"],
+                        "POST": ["db"]
+                    }
                 }
             ]
         },
@@ -35,79 +48,107 @@
             "name": "user",
             "path": "/user",
             "actions": ["GET"],
-            "auth": "user",
-            "endpoints": [
+            "middleware": {
+                "GET": ["user-auth"]
+            },
+            "subpoints": [
                 {
                     "name": "interactive",
                     "path": "/interactive",
                     "actions": ["GET"],
-                    "requires": ["db"]
+                    "services": {
+                        "GET": ["db"]
+                    }
                 },
                 {
                     "name": "repl",
                     "path": "/repl",
                     "actions": ["GET"],
-                    "requires": ["db", "agents"]
+                    "services": {
+                        "GET": ["db", "agents"]
+                    }
                 },
                 {
                     "name": "calendar",
                     "path": "/calendar",
                     "actions": ["GET"],
-                    "requires": ["db"]
+                    "services": {
+                        "GET": ["db"]
+                    }
                 },
                 {
                     "name": "events",
                     "path": "/events",
                     "actions": ["GET"],
-                    "requires": ["db"]
+                    "services": {
+                        "GET": ["db"]
+                    }
                 },
                 {
                     "name": "tasks",
                     "path": "/tasks",
                     "actions": ["GET"],
-                    "requires": ["db"]
+                    "services": {
+                        "GET": ["db"]
+                    }
                 },
                 {
                     "name": "routines",
                     "path": "/routines",
                     "actions": ["GET"],
-                    "requires": ["db"]
+                    "services": {
+                        "GET": ["db"]
+                    }
                 },
                 {
                     "name": "schedules",
                     "path": "/schedules",
                     "actions": ["GET"],
-                    "requires": ["db"],
-                    "endpoints": [
+                    "services": {
+                        "GET": ["db"]
+                    },
+                    "subpoints": [
                         {
                             "name": "base",
                             "path": "/base",
                             "actions": ["GET"],
-                            "requires": ["db"],
-                            "endpoints": [
+                            "services": {
+                                "GET": ["db"]
+                            },
+                            "subpoints": [
                                 {
                                     "name": "fixtures",
                                     "path": "/fixtures/:fixture_id",
                                     "actions": ["GET", "POST", "DELETE"],
-                                    "requires": ["db"],
-                                    "endpoints":[
+                                    "services": {
+                                        "GET": ["db"],
+                                        "POST": ["db"],
+                                        "DELETE": ["db"]
+                                    },
+                                    "subpoints":[
                                         {
                                             "name": "create",
                                             "path": "/create",
                                             "actions": ["GET"],
-                                            "requires": ["db"]
+                                            "services": {
+                                                "GET": ["db"]
+                                            }
                                         },
                                         {
                                             "name": "edit",
                                             "path": "/edit",
                                             "actions": ["GET"],
-                                            "requires": ["db"]
+                                            "services": {
+                                                "GET": ["db"]
+                                            }
                                         },
                                         {
                                             "name": "delete",
                                             "path": "/delete",
                                             "actions": ["GET"],
-                                            "requires": ["db"]
+                                            "services": {
+                                                "GET": ["db"]
+                                            }
                                         }
                                     ]
                                 }
@@ -117,13 +158,17 @@
                             "name": "weekly",
                             "path": "/weekly",
                             "actions": ["GET"],
-                            "requires": ["db"],
-                            "endpoints": [
+                            "services": {
+                                "GET": ["db"]
+                            },
+                            "subpoints": [
                                 {
                                     "name": "weekday",
                                     "path": "/:weekday",
                                     "actions": ["GET"],
-                                    "requires": ["db"]
+                                    "services": {
+                                        "GET": ["db"]
+                                    }
                                 }
                             ]
                         },
@@ -131,13 +176,17 @@
                             "name": "yearly",
                             "path": "/yearly",
                             "actions": ["GET"],
-                            "requires": ["db"],
-                            "endpoints": [
+                            "services": {
+                                "GET": ["db"]
+                            },
+                            "subpoints": [
                                 {
                                     "name": "yearday",
                                     "path": "/:yearday",
                                     "actions": ["GET"],
-                                    "requires": ["db"]
+                                    "services": {
+                                        "GET": ["db"]
+                                    }
                                 }
                             ]
                         }
