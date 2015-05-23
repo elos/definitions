@@ -56,6 +56,9 @@
                     "name": "interactive",
                     "path": "/interactive",
                     "actions": ["GET"],
+                    "middleware": {
+                        "GET": ["user-auth"]
+                    },
                     "services": {
                         "GET": ["db"]
                     }
@@ -64,6 +67,9 @@
                     "name": "repl",
                     "path": "/repl",
                     "actions": ["GET"],
+                    "middleware": {
+                        "GET": ["user-auth"]
+                    },
                     "services": {
                         "GET": ["db", "agents"]
                     }
@@ -72,6 +78,9 @@
                     "name": "calendar",
                     "path": "/calendar",
                     "actions": ["GET"],
+                    "middleware": {
+                        "GET": ["user-auth"]
+                    },
                     "services": {
                         "GET": ["db"]
                     }
@@ -80,6 +89,9 @@
                     "name": "events",
                     "path": "/events",
                     "actions": ["GET"],
+                    "middleware": {
+                        "GET": ["user-auth"]
+                    },
                     "services": {
                         "GET": ["db"]
                     }
@@ -88,6 +100,9 @@
                     "name": "tasks",
                     "path": "/tasks",
                     "actions": ["GET"],
+                    "middleware": {
+                        "GET": ["user-auth"]
+                    },
                     "services": {
                         "GET": ["db"]
                     }
@@ -96,6 +111,9 @@
                     "name": "routines",
                     "path": "/routines",
                     "actions": ["GET"],
+                    "middleware": {
+                        "GET": ["user-auth"]
+                    },
                     "services": {
                         "GET": ["db"]
                     }
@@ -104,6 +122,9 @@
                     "name": "schedules",
                     "path": "/schedules",
                     "actions": ["GET"],
+                    "middleware": {
+                        "GET": ["user-auth"]
+                    },
                     "services": {
                         "GET": ["db"]
                     },
@@ -112,6 +133,9 @@
                             "name": "base",
                             "path": "/base",
                             "actions": ["GET"],
+                            "middleware": {
+                                "GET": ["user-auth"]
+                            },
                             "services": {
                                 "GET": ["db"]
                             },
@@ -120,6 +144,11 @@
                                     "name": "fixtures",
                                     "path": "/fixtures/:fixture_id",
                                     "actions": ["GET", "POST", "DELETE"],
+                                    "middleware": {
+                                        "GET": ["user-auth"],
+                                        "POST": ["user-auth"],
+                                        "DELETE": ["user-auth"]
+                                    },
                                     "services": {
                                         "GET": ["db"],
                                         "POST": ["db"],
@@ -130,6 +159,9 @@
                                             "name": "create",
                                             "path": "/create",
                                             "actions": ["GET"],
+                                            "middleware": {
+                                                "GET": ["user-auth"]
+                                            },
                                             "services": {
                                                 "GET": ["db"]
                                             }
@@ -138,6 +170,9 @@
                                             "name": "edit",
                                             "path": "/edit",
                                             "actions": ["GET"],
+                                            "middleware": {
+                                                "GET": ["user-auth"]
+                                            },
                                             "services": {
                                                 "GET": ["db"]
                                             }
@@ -146,6 +181,9 @@
                                             "name": "delete",
                                             "path": "/delete",
                                             "actions": ["GET"],
+                                            "middleware": {
+                                                "GET": ["user-auth"]
+                                            },
                                             "services": {
                                                 "GET": ["db"]
                                             }
@@ -158,6 +196,9 @@
                             "name": "weekly",
                             "path": "/weekly",
                             "actions": ["GET"],
+                            "middleware": {
+                                "GET": ["user-auth"]
+                            },
                             "services": {
                                 "GET": ["db"]
                             },
@@ -166,6 +207,9 @@
                                     "name": "weekday",
                                     "path": "/:weekday",
                                     "actions": ["GET"],
+                                    "middleware": {
+                                        "GET": ["user-auth"]
+                                    },
                                     "services": {
                                         "GET": ["db"]
                                     }
@@ -179,11 +223,17 @@
                             "services": {
                                 "GET": ["db"]
                             },
+                            "middleware": {
+                                "GET": ["user-auth"]
+                            },
                             "subpoints": [
                                 {
                                     "name": "yearday",
                                     "path": "/:yearday",
                                     "actions": ["GET"],
+                                    "middleware": {
+                                        "GET": ["user-auth"]
+                                    },
                                     "services": {
                                         "GET": ["db"]
                                     }
@@ -194,5 +244,12 @@
                 }
             ]
         }
-    ]
+    ],
+
+    "desc": "specified from app root",
+    "static": {
+        "css": "assets/css",
+        "js": "assets/js",
+        "img": "assets/img"
+    }
 }
