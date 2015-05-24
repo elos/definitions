@@ -1,0 +1,34 @@
+{
+    "version": "1.0.0",
+
+    "kind": "session",
+    "space": "sessions",
+    "domains": ["sessions"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "token",
+            "type": "string"
+        }
+    ],
+
+    "links": [
+        {
+            "name": "user",
+            "multiplicity": "one",
+            "codomain": "users"
+        }
+    ]
+}
