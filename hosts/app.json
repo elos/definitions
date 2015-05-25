@@ -4,7 +4,8 @@
     "port": 8000,
 
     "middleware": [
-        "user-auth"
+        "log",
+        "session-auth"
     ],
 
     "services": [
@@ -17,17 +18,27 @@
         {
             "name": "landing",
             "path": "/",
-            "actions": ["GET"]
+            "actions": ["GET"],
+            "middleware": {
+                "GET": ["log"]
+            }
         },
         {
             "name": "sessions",
             "path": "/sessions",
             "actions": ["GET"],
+            "middleware": {
+                "GET": ["log"]
+            },
             "subpoints": [
                 {
                     "name": "sign_in",
                     "path": "/sign_in",
                     "actions": ["GET", "POST"],
+                    "middleware": {
+                        "GET": ["log"],
+                        "POST": ["log"]
+                    },
                     "services": {
                         "GET": ["db", "sessions"],
                         "POST": ["db", "sessions"]
@@ -37,6 +48,10 @@
                     "name": "register",
                     "path": "/register",
                     "actions": ["GET", "POST"],
+                    "middleware": {
+                        "GET": ["log"],
+                        "POST": ["log"]
+                    },
                     "services": {
                         "GET": ["db"],
                         "POST": ["db"]
@@ -49,7 +64,7 @@
             "path": "/user",
             "actions": ["GET"],
             "middleware": {
-                "GET": ["user-auth"]
+                "GET": ["log", "session-auth"]
             },
             "subpoints": [
                 {
@@ -57,7 +72,7 @@
                     "path": "/interactive",
                     "actions": ["GET"],
                     "middleware": {
-                        "GET": ["user-auth"]
+                        "GET": ["log", "session-auth"]
                     },
                     "services": {
                         "GET": ["db"]
@@ -68,7 +83,7 @@
                     "path": "/repl",
                     "actions": ["GET"],
                     "middleware": {
-                        "GET": ["user-auth"]
+                        "GET": ["log", "session-auth"]
                     },
                     "services": {
                         "GET": ["db", "agents"]
@@ -79,7 +94,7 @@
                     "path": "/calendar",
                     "actions": ["GET"],
                     "middleware": {
-                        "GET": ["user-auth"]
+                        "GET": ["log", "session-auth"]
                     },
                     "services": {
                         "GET": ["db"]
@@ -90,7 +105,7 @@
                     "path": "/events",
                     "actions": ["GET"],
                     "middleware": {
-                        "GET": ["user-auth"]
+                        "GET": ["log", "session-auth"]
                     },
                     "services": {
                         "GET": ["db"]
@@ -101,7 +116,7 @@
                     "path": "/tasks",
                     "actions": ["GET"],
                     "middleware": {
-                        "GET": ["user-auth"]
+                        "GET": ["log", "session-auth"]
                     },
                     "services": {
                         "GET": ["db"]
@@ -112,7 +127,7 @@
                     "path": "/routines",
                     "actions": ["GET"],
                     "middleware": {
-                        "GET": ["user-auth"]
+                        "GET": ["log", "session-auth"]
                     },
                     "services": {
                         "GET": ["db"]
@@ -123,7 +138,7 @@
                     "path": "/schedules",
                     "actions": ["GET"],
                     "middleware": {
-                        "GET": ["user-auth"]
+                        "GET": ["log", "session-auth"]
                     },
                     "services": {
                         "GET": ["db"]
@@ -134,7 +149,7 @@
                             "path": "/base",
                             "actions": ["GET"],
                             "middleware": {
-                                "GET": ["user-auth"]
+                                "GET": ["log", "session-auth"]
                             },
                             "services": {
                                 "GET": ["db"]
@@ -145,9 +160,9 @@
                                     "path": "/fixtures/:fixture_id",
                                     "actions": ["GET", "POST", "DELETE"],
                                     "middleware": {
-                                        "GET": ["user-auth"],
-                                        "POST": ["user-auth"],
-                                        "DELETE": ["user-auth"]
+                                        "GET": ["log", "session-auth"],
+                                        "POST": ["log", "session-auth"],
+                                        "DELETE": ["log", "session-auth"]
                                     },
                                     "services": {
                                         "GET": ["db"],
@@ -160,7 +175,7 @@
                                             "path": "/create",
                                             "actions": ["GET"],
                                             "middleware": {
-                                                "GET": ["user-auth"]
+                                                "GET": ["log", "session-auth"]
                                             },
                                             "services": {
                                                 "GET": ["db"]
@@ -171,7 +186,7 @@
                                             "path": "/edit",
                                             "actions": ["GET"],
                                             "middleware": {
-                                                "GET": ["user-auth"]
+                                                "GET": ["log", "session-auth"]
                                             },
                                             "services": {
                                                 "GET": ["db"]
@@ -182,7 +197,7 @@
                                             "path": "/delete",
                                             "actions": ["GET"],
                                             "middleware": {
-                                                "GET": ["user-auth"]
+                                                "GET": ["log", "session-auth"]
                                             },
                                             "services": {
                                                 "GET": ["db"]
@@ -197,7 +212,7 @@
                             "path": "/weekly",
                             "actions": ["GET"],
                             "middleware": {
-                                "GET": ["user-auth"]
+                                "GET": ["log", "session-auth"]
                             },
                             "services": {
                                 "GET": ["db"]
@@ -208,7 +223,7 @@
                                     "path": "/:weekday",
                                     "actions": ["GET"],
                                     "middleware": {
-                                        "GET": ["user-auth"]
+                                        "GET": ["log", "session-auth"]
                                     },
                                     "services": {
                                         "GET": ["db"]
@@ -220,11 +235,11 @@
                             "name": "yearly",
                             "path": "/yearly",
                             "actions": ["GET"],
+                            "middleware": {
+                                "GET": ["log", "session-auth"]
+                            },
                             "services": {
                                 "GET": ["db"]
-                            },
-                            "middleware": {
-                                "GET": ["user-auth"]
                             },
                             "subpoints": [
                                 {
@@ -232,7 +247,7 @@
                                     "path": "/:yearday",
                                     "actions": ["GET"],
                                     "middleware": {
-                                        "GET": ["user-auth"]
+                                        "GET": ["log", "session-auth"]
                                     },
                                     "services": {
                                         "GET": ["db"]
@@ -248,8 +263,8 @@
 
     "desc": "specified from app root",
     "static": {
-        "css": "assets/css",
-        "js": "assets/js",
-        "img": "assets/img"
+        "css": "/assets/css/",
+        "js": "/assets/js/",
+        "img": "/assets/img/"
     }
 }
