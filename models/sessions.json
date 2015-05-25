@@ -21,6 +21,10 @@
         {
             "name": "token",
             "type": "string"
+        },
+        {
+            "name": "expires_after",
+            "type": "integer"
         }
     ],
 
