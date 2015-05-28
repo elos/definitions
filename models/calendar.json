@@ -24,11 +24,11 @@
         },
         {
             "name": "weekday_schedules",
-            "type": "map[string]id"
+            "type": "map[integer]id"
         },
         {
             "name": "yearday_schedules",
-            "type": "map[string]id"
+            "type": "map[integer]id"
         }
     ],
 
