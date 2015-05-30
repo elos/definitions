@@ -1,27 +1,258 @@
 {
     "name": "api",
     "host": "api.elos.io",
+    "port": 8080,
+
+    "middleware": [
+        "log",
+        "session-auth"
+    ],
+
+    "services": [
+        "agents",
+        "db"
+    ],
 
     "endpoints": [
         {
-            "name": "authentication",
-            "path": "auth",
-            "actions": ["POST", "OPTIONS"]
+            "name": "sessions",
+            "path": "/sessions",
+            "actions": ["GET", "POST"],
+            "middleware": {
+                "GET": ["log"],
+                "POST": ["log"],
+                "DELETE": ["log"]
+            },
+            "services": {
+                "GET": ["db", "session-auth"],
+                "POST": ["db"],
+                "DELETE": ["db", "session-auth"]
+            }
         },
         {
-            "name": "action",
+            "name": "actions",
             "path": "/actions",
-            "actions": ["GET", "POST", "DELETE", "OPTIONS"]
+            "actions": ["GET", "POST", "DELETE"],
+            "middleware": {
+                "GET": ["log", "session-auth"],
+                "POST": ["log", "session-auth"],
+                "DELETE": ["log", "session-auth"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"]
+            }
         },
         {
-            "name": "attribute",
+            "name": "attributes",
             "path": "/attributes",
-            "actions": ["GET", "POST", "DELETE", "OPTIONS"]
+            "actions": ["GET", "POST", "DELETE"],
+            "middleware": {
+                "GET": ["log", "session-auth"],
+                "POST": ["log", "session-auth"],
+                "DELETE": ["log", "session-auth"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"]
+            }
+        },
+        {
+            "name": "calendars",
+            "path": "/calendars",
+            "actions": ["GET", "POST", "DELETE"],
+            "middleware": {
+                "GET": ["log", "session-auth"],
+                "POST": ["log", "session-auth"],
+                "DELETE": ["log", "session-auth"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"]
+            }
+        },
+        {
+            "name": "classes",
+            "path": "/classes",
+            "actions": ["GET", "POST", "DELETE"],
+            "middleware": {
+                "GET": ["log", "session-auth"],
+                "POST": ["log", "session-auth"],
+                "DELETE": ["log", "session-auth"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"]
+            }
+        },
+        {
+            "name": "events",
+            "path": "/events",
+            "actions": ["GET", "POST", "DELETE"],
+            "middleware": {
+                "GET": ["log", "session-auth"],
+                "POST": ["log", "session-auth"],
+                "DELETE": ["log", "session-auth"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"]
+            }
+        },
+        {
+            "name": "fixtures",
+            "path": "/fixtures",
+            "actions": ["GET", "POST", "DELETE"],
+            "middleware": {
+                "GET": ["log", "session-auth"],
+                "POST": ["log", "session-auth"],
+                "DELETE": ["log", "session-auth"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"]
+            }
+        },
+        {
+            "name": "links",
+            "path": "/links",
+            "actions": ["GET", "POST", "DELETE"],
+            "middleware": {
+                "GET": ["log", "session-auth"],
+                "POST": ["log", "session-auth"],
+                "DELETE": ["log", "session-auth"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"]
+            }
+        },
+        {
+            "name": "objects",
+            "path": "/objects",
+            "actions": ["GET", "POST", "DELETE"],
+            "middleware": {
+                "GET": ["log", "session-auth"],
+                "POST": ["log", "session-auth"],
+                "DELETE": ["log", "session-auth"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"]
+            }
+        },
+        {
+            "name": "ontologies",
+            "path": "/ontologies",
+            "actions": ["GET", "POST", "DELETE"],
+            "middleware": {
+                "GET": ["log", "session-auth"],
+                "POST": ["log", "session-auth"],
+                "DELETE": ["log", "session-auth"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"]
+            }
+        },
+        {
+            "name": "relations",
+            "path": "/relations",
+            "actions": ["GET", "POST", "DELETE"],
+            "middleware": {
+                "GET": ["log", "session-auth"],
+                "POST": ["log", "session-auth"],
+                "DELETE": ["log", "session-auth"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"]
+            }
+        },
+        {
+            "name": "routines",
+            "path": "/routines",
+            "actions": ["GET", "POST", "DELETE"],
+            "middleware": {
+                "GET": ["log", "session-auth"],
+                "POST": ["log", "session-auth"],
+                "DELETE": ["log", "session-auth"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"]
+            }
+        },
+        {
+            "name": "schedules",
+            "path": "/schedules",
+            "actions": ["GET", "POST", "DELETE"],
+            "middleware": {
+                "GET": ["log", "session-auth"],
+                "POST": ["log", "session-auth"],
+                "DELETE": ["log", "session-auth"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"]
+            }
+        },
+        {
+            "name": "tasks",
+            "path": "/tasks",
+            "actions": ["GET", "POST", "DELETE"],
+            "middleware": {
+                "GET": ["log", "session-auth"],
+                "POST": ["log", "session-auth"],
+                "DELETE": ["log", "session-auth"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"]
+            }
+        },
+        {
+            "name": "traits",
+            "path": "/traits",
+            "actions": ["GET", "POST", "DELETE"],
+            "middleware": {
+                "GET": ["log", "session-auth"],
+                "POST": ["log", "session-auth"],
+                "DELETE": ["log", "session-auth"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"]
+            }
         },
         {
             "name": "users",
             "path": "/users",
-            "actions": ["GET", "POST", "DELETE", "OPTIONS"]
+            "actions": ["GET", "POST", "DELETE"],
+            "middleware": {
+                "GET": ["log", "session-auth"],
+                "POST": ["log", "session-auth"],
+                "DELETE": ["log", "session-auth"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"]
+            }
         }
     ]
 }
