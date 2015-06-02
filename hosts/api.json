@@ -19,14 +19,14 @@
             "path": "/sessions",
             "actions": ["GET", "POST"],
             "middleware": {
-                "GET": ["log"],
+                "GET": ["log", "session-auth"],
                 "POST": ["log"],
-                "DELETE": ["log"]
+                "DELETE": ["log", "session-auth"]
             },
             "services": {
-                "GET": ["db", "session-auth"],
+                "GET": ["db"],
                 "POST": ["db"],
-                "DELETE": ["db", "session-auth"]
+                "DELETE": ["db"]
             }
         },
         {
