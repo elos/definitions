@@ -42,6 +42,13 @@
             "inverse": "user"
         },
         {
+            "name": "attributes",
+            "multiplicity": "mul",
+            "singular": "attribute",
+            "codomain": "attributes",
+            "inverse": "user"
+        },
+        {
             "name": "events",
             "multiplicity": "mul",
             "singular": "event",

@@ -25,6 +25,12 @@
 
     "links": [
         {
+            "name": "user",
+            "multiplicity": "one",
+            "codomain": "users",
+            "inverse": "attributes"
+        },
+        {
             "name": "object",
             "multiplicity": "one",
             "codomain": "objects",
