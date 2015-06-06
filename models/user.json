@@ -30,7 +30,7 @@
             "multiplicity": "mul",
             "singular": "credential",
             "codomain": "credentials",
-            "inverse": "user"
+            "inverse": "owner"
         },
         {
             "name": "groups",
@@ -51,7 +51,7 @@
             "multiplicity": "mul",
             "singular": "session",
             "codomain": "sessions",
-            "inverse": "user"
+            "inverse": "owner"
         }
     ]
 }

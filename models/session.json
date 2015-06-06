@@ -30,9 +30,15 @@
 
     "links": [
         {
-            "name": "user",
+            "name": "owner",
             "multiplicity": "one",
             "codomain": "users",
+            "inverse": "sessions"
+        },
+        {
+            "name": "credential",
+            "multiplicity": "one",
+            "codomain": "credentials",
             "inverse": "sessions"
         }
     ]
