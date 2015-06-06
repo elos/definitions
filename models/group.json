@@ -1,0 +1,50 @@
+{
+    "version": "1.0.0",
+
+    "kind": "group",
+    "space": "groups",
+    "domains": ["groups"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "access",
+            "type": "string"
+        },
+        {
+            "name": "domain",
+            "type": "string"
+        },
+        {
+            "name": "ids",
+            "type": "[]id"
+        }
+    ],
+
+    "links": [
+        {
+            "name": "owner",
+            "multiplicity": "one",
+            "codomain": "users",
+            "inverse": "groups"
+        },
+        {
+            "name": "users",
+            "multiplicity": "mul",
+            "singular": "user",
+            "codomain": "users",
+            "inverse": "authorizations"
+        }
+    ]
+}

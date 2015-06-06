@@ -1,5 +1,6 @@
 {
     "version": "1.0.0",
+
     "kind": "attribute",
     "space": "attributes",
     "domains": ["attributes"],
@@ -25,10 +26,9 @@
 
     "links": [
         {
-            "name": "user",
+            "name": "owner",
             "multiplicity": "one",
-            "codomain": "users",
-            "inverse": "attributes"
+            "codomain": "users"
         },
         {
             "name": "object",

@@ -38,9 +38,14 @@
 
     "links": [
         {
-            "name": "user",
+            "name": "owner",
             "multiplicity": "one",
-            "codomain": "users",
+            "codomain": "users"
+        },
+        {
+            "name": "person",
+            "multiplicity": "one",
+            "codomain": "persons",
             "inverse": "events"
         }
     ]

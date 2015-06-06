@@ -1,5 +1,6 @@
 {
     "version": "1.0.0",
+
     "kind": "relation",
     "space": "relations",
     "domains": ["relations"],
@@ -24,6 +25,11 @@
     ],
 
     "links": [
+        {
+            "name": "owner",
+            "multiplicity": "one",
+            "codomain": "users"
+        },
         {
             "name": "object",
             "multiplicity": "one",

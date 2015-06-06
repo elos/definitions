@@ -34,10 +34,15 @@
 
     "links": [
         {
-            "name": "user",
+            "name": "owner",
             "multiplicity": "one",
-            "codomain": "users",
-            "inverse": "actions"
+            "codomain": "users"
+        },
+        {
+            "name": "person",
+            "multiplicity": "one",
+            "codomain": "persons",
+            "inverse": "calendar"
         },
         {
             "name": "base_schedule",

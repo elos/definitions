@@ -20,9 +20,14 @@
     ],
     "links": [
         {
-            "name": "user",
+            "name": "owner",
+            "multiplicity": "one",
+            "codomain": "users"
+        },
+        {
+            "name": "person",
             "multiplicity":"one",
-            "codomain": "users",
+            "codomain": "persons",
             "inverse": "ontology"
         },
         {

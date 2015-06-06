@@ -32,7 +32,8 @@
         {
             "name": "user",
             "multiplicity": "one",
-            "codomain": "users"
+            "codomain": "users",
+            "inverse": "sessions"
         }
     ]
 }

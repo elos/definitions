@@ -8,8 +8,7 @@
     "traits": [
         {
             "name": "id",
-            "type": "id",
-            "desc": ""
+            "type": "id"
         },
         {
             "name": "created_at",
@@ -20,76 +19,39 @@
             "type": "datetime"
         },
         {
-            "name": "name",
+            "name": "password",
             "type": "string"
-        },
-        {
-            "name": "key",
-            "type": "string"
-        },
-        {
-            "name": "public_keys",
-            "type": "[]string"
         }
     ],
 
     "links": [
         {
-            "name": "actions",
+            "name": "credentials",
             "multiplicity": "mul",
-            "singular": "action",
-            "codomain": "actions",
+            "singular": "credential",
+            "codomain": "credentials",
             "inverse": "user"
         },
         {
-            "name": "attributes",
+            "name": "groups",
             "multiplicity": "mul",
-            "singular": "attribute",
-            "codomain": "attributes",
-            "inverse": "user"
+            "singular": "group",
+            "codomain": "groups",
+            "inverse": "owner"
         },
         {
-            "name": "events",
+            "name": "authorizations",
             "multiplicity": "mul",
-            "singular": "event",
-            "codomain": "events",
-            "inverse": "user"
+            "singular": "authorization",
+            "codomain": "groups",
+            "inverse": "users"
         },
         {
-            "name": "tasks",
+            "name": "sessions",
             "multiplicity": "mul",
-            "singular": "task",
-            "codomain": "tasks",
+            "singular": "session",
+            "codomain": "sessions",
             "inverse": "user"
-        },
-        {
-            "name": "routines",
-            "multiplicity": "mul",
-            "singular": "routine",
-            "codomain": "routines",
-            "inverse": "user"
-        },
-        {
-            "name": "calendar",
-            "multiplicity": "one",
-            "codomain":"calendars",
-            "inverse": "user"
-        },
-        {
-            "name": "ontology",
-            "multiplicity": "one",
-            "codomain": "ontologies",
-            "inverse": "user"
-        },
-        {
-            "name": "current_action",
-            "multiplicity": "one",
-            "codomain": "actions"
-        },
-        {
-            "name": "current_actionable",
-            "multiplicity": "one",
-            "codomain": "actionable"
         }
     ]
 }

@@ -1,0 +1,87 @@
+{
+    "version": "1.0.0",
+
+    "kind": "person",
+    "space": "persons",
+    "domains": ["persons"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "key",
+            "type": "string"
+        },
+        {
+            "name": "public_keys",
+            "type": "[]string"
+        }
+    ],
+
+    "links": [
+        {
+            "name": "actions",
+            "multiplicity": "mul",
+            "singular": "action",
+            "codomain": "actions",
+            "inverse": "person"
+        },
+        {
+            "name": "events",
+            "multiplicity": "mul",
+            "singular": "event",
+            "codomain": "events",
+            "inverse": "person"
+        },
+        {
+            "name": "tasks",
+            "multiplicity": "mul",
+            "singular": "task",
+            "codomain": "tasks",
+            "inverse": "person"
+        },
+        {
+            "name": "routines",
+            "multiplicity": "mul",
+            "singular": "routine",
+            "codomain": "routines",
+            "inverse": "person"
+        },
+        {
+            "name": "calendar",
+            "multiplicity": "one",
+            "codomain":"calendars",
+            "inverse": "person"
+        },
+        {
+            "name": "ontology",
+            "multiplicity": "one",
+            "codomain": "ontologies",
+            "inverse": "person"
+        },
+        {
+            "name": "current_action",
+            "multiplicity": "one",
+            "codomain": "actions"
+        },
+        {
+            "name": "current_actionable",
+            "multiplicity": "one",
+            "codomain": "actionable"
+        }
+    ]
+}
