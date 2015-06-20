@@ -34,6 +34,11 @@
 
     "links": [
         {
+            "name": "owner",
+            "multiplicity": "one",
+            "codomain": "users"
+        },
+        {
             "name": "actions",
             "multiplicity": "mul",
             "singular": "action",
