@@ -5,6 +5,7 @@
 
     "middleware": [
         "log",
+        "cors",
         "session-auth"
     ],
 
@@ -16,27 +17,29 @@
     "endpoints": [
         {
             "name": "sessions",
-            "path": "/sessions",
-            "actions": ["GET", "POST"],
+            "path": "/sessions/",
+            "actions": ["GET", "POST", "DELETE", "OPTIONS"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors"],
+                "DELETE": ["log", "cors", "session-auth"],
+                "OPTIONS": ["log", "cors"]
             },
             "services": {
                 "GET": ["db"],
                 "POST": ["db"],
-                "DELETE": ["db"]
+                "DELETE": ["db"],
+                "OPTIONS": []
             }
         },
         {
             "name": "actions",
-            "path": "/actions",
+            "path": "/actions/",
             "actions": ["GET", "POST", "DELETE"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log", "session-auth"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"]
             },
             "services": {
                 "GET": ["db"],
@@ -46,12 +49,12 @@
         },
         {
             "name": "attributes",
-            "path": "/attributes",
+            "path": "/attributes/",
             "actions": ["GET", "POST", "DELETE"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log", "session-auth"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"]
             },
             "services": {
                 "GET": ["db"],
@@ -61,12 +64,12 @@
         },
         {
             "name": "calendars",
-            "path": "/calendars",
+            "path": "/calendars/",
             "actions": ["GET", "POST", "DELETE"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log", "session-auth"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"]
             },
             "services": {
                 "GET": ["db"],
@@ -76,12 +79,12 @@
         },
         {
             "name": "classes",
-            "path": "/classes",
+            "path": "/classes/",
             "actions": ["GET", "POST", "DELETE"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log", "session-auth"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"]
             },
             "services": {
                 "GET": ["db"],
@@ -91,12 +94,12 @@
         },
         {
             "name": "events",
-            "path": "/events",
+            "path": "/events/",
             "actions": ["GET", "POST", "DELETE"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log", "session-auth"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"]
             },
             "services": {
                 "GET": ["db"],
@@ -106,12 +109,12 @@
         },
         {
             "name": "fixtures",
-            "path": "/fixtures",
+            "path": "/fixtures/",
             "actions": ["GET", "POST", "DELETE"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log", "session-auth"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"]
             },
             "services": {
                 "GET": ["db"],
@@ -121,12 +124,12 @@
         },
         {
             "name": "links",
-            "path": "/links",
+            "path": "/links/",
             "actions": ["GET", "POST", "DELETE"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log", "session-auth"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"]
             },
             "services": {
                 "GET": ["db"],
@@ -136,12 +139,12 @@
         },
         {
             "name": "objects",
-            "path": "/objects",
+            "path": "/objects/",
             "actions": ["GET", "POST", "DELETE"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log", "session-auth"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"]
             },
             "services": {
                 "GET": ["db"],
@@ -151,12 +154,12 @@
         },
         {
             "name": "ontologies",
-            "path": "/ontologies",
+            "path": "/ontologies/",
             "actions": ["GET", "POST", "DELETE"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log", "session-auth"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"]
             },
             "services": {
                 "GET": ["db"],
@@ -166,12 +169,12 @@
         },
         {
             "name": "relations",
-            "path": "/relations",
+            "path": "/relations/",
             "actions": ["GET", "POST", "DELETE"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log", "session-auth"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"]
             },
             "services": {
                 "GET": ["db"],
@@ -181,12 +184,12 @@
         },
         {
             "name": "routines",
-            "path": "/routines",
+            "path": "/routines/",
             "actions": ["GET", "POST", "DELETE"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log", "session-auth"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"]
             },
             "services": {
                 "GET": ["db"],
@@ -196,12 +199,12 @@
         },
         {
             "name": "schedules",
-            "path": "/schedules",
+            "path": "/schedules/",
             "actions": ["GET", "POST", "DELETE"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log", "session-auth"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"]
             },
             "services": {
                 "GET": ["db"],
@@ -211,12 +214,12 @@
         },
         {
             "name": "tasks",
-            "path": "/tasks",
+            "path": "/tasks/",
             "actions": ["GET", "POST", "DELETE"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log", "session-auth"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"]
             },
             "services": {
                 "GET": ["db"],
@@ -226,12 +229,12 @@
         },
         {
             "name": "traits",
-            "path": "/traits",
+            "path": "/traits/",
             "actions": ["GET", "POST", "DELETE"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log", "session-auth"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"]
             },
             "services": {
                 "GET": ["db"],
@@ -241,17 +244,36 @@
         },
         {
             "name": "users",
-            "path": "/users",
-            "actions": ["GET", "POST", "DELETE"],
+            "path": "/users/",
+            "actions": ["GET", "POST", "DELETE", "OPTIONS"],
             "middleware": {
-                "GET": ["log", "session-auth"],
-                "POST": ["log", "session-auth"],
-                "DELETE": ["log", "session-auth"]
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"],
+                "OPTIONS": ["log", "cors"]
             },
             "services": {
                 "GET": ["db"],
                 "POST": ["db"],
-                "DELETE": ["db"]
+                "DELETE": ["db"],
+                "OPTIONS": []
+            }
+        },
+        {
+            "name": "persons",
+            "path": "/persons/",
+            "actions": ["GET", "POST", "DELETE", "OPTIONS"],
+            "middleware": {
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"],
+                "OPTIONS": ["log", "cors"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"],
+                "OPTIONS": []
             }
         }
     ]
