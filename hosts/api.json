@@ -65,16 +65,18 @@
         {
             "name": "calendars",
             "path": "/calendars/",
-            "actions": ["GET", "POST", "DELETE"],
+            "actions": ["GET", "POST", "DELETE", "OPTIONS"],
             "middleware": {
                 "GET": ["log", "cors", "session-auth"],
                 "POST": ["log", "cors", "session-auth"],
-                "DELETE": ["log", "cors", "session-auth"]
+                "DELETE": ["log", "cors", "session-auth"],
+                "OPTIONS": ["log", "cors"]
             },
             "services": {
                 "GET": ["db"],
                 "POST": ["db"],
-                "DELETE": ["db"]
+                "DELETE": ["db"],
+                "OPTIONS": []
             }
         },
         {
@@ -110,16 +112,18 @@
         {
             "name": "fixtures",
             "path": "/fixtures/",
-            "actions": ["GET", "POST", "DELETE"],
+            "actions": ["GET", "POST", "DELETE", "OPTIONS"],
             "middleware": {
                 "GET": ["log", "cors", "session-auth"],
                 "POST": ["log", "cors", "session-auth"],
-                "DELETE": ["log", "cors", "session-auth"]
+                "DELETE": ["log", "cors", "session-auth"],
+                "OPTIONS": ["log", "cors"]
             },
             "services": {
                 "GET": ["db"],
                 "POST": ["db"],
-                "DELETE": ["db"]
+                "DELETE": ["db"],
+                "OPTIONS": []
             }
         },
         {
@@ -200,16 +204,18 @@
         {
             "name": "schedules",
             "path": "/schedules/",
-            "actions": ["GET", "POST", "DELETE"],
+            "actions": ["GET", "POST", "DELETE", "OPTIONS"],
             "middleware": {
                 "GET": ["log", "cors", "session-auth"],
                 "POST": ["log", "cors", "session-auth"],
-                "DELETE": ["log", "cors", "session-auth"]
+                "DELETE": ["log", "cors", "session-auth"],
+                "OPTIONS": ["log", "cors"]
             },
             "services": {
                 "GET": ["db"],
                 "POST": ["db"],
-                "DELETE": ["db"]
+                "DELETE": ["db"],
+                "OPTIONS": []
             }
         },
         {
@@ -262,6 +268,23 @@
         {
             "name": "persons",
             "path": "/persons/",
+            "actions": ["GET", "POST", "DELETE", "OPTIONS"],
+            "middleware": {
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"],
+                "OPTIONS": ["log", "cors"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"],
+                "OPTIONS": []
+            }
+        },
+        {
+            "name": "property",
+            "path": "/property",
             "actions": ["GET", "POST", "DELETE", "OPTIONS"],
             "middleware": {
                 "GET": ["log", "cors", "session-auth"],
