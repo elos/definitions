@@ -1,0 +1,53 @@
+{
+    "version": "1.0.0",
+
+    "kind": "datum",
+    "space": "data",
+    "domains": ["data"],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "value",
+            "type": "float"
+        },
+        {
+            "name": "unit",
+            "type": "string"
+        },
+        {
+            "name": "tags",
+            "type": "[]string"
+        },
+        {
+            "name": "context",
+            "type": "string"
+        }
+    ],
+
+    "links": [
+        {
+            "name": "owner",
+            "multiplicity": "one",
+            "codomain": "users"
+        },
+        {
+            "name": "person",
+            "multiplicity": "one",
+            "codomain": "persons",
+            "inverse": "data"
+        },
+        {
+            "name": "event",
+            "multiplicity": "one",
+            "codomain": "events"
+        }
+    ]
+}

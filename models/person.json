@@ -39,6 +39,13 @@
             "codomain": "users"
         },
         {
+            "name": "data",
+            "multiplicity": "mul",
+            "singular": "datum",
+            "codomain": "data",
+            "inverse": "person"
+        },
+        {
             "name": "actions",
             "multiplicity": "mul",
             "singular": "action",
