@@ -24,7 +24,7 @@
         }
     ],
 
-    "links": [
+    "relations": [
         {
             "name": "credentials",
             "multiplicity": "mul",

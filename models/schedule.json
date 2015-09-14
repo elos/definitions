@@ -30,7 +30,8 @@
             "type": "datetime"
         }
     ],
-    "links": [
+
+    "relations": [
         {
             "name": "owner",
             "multiplicity":"one",

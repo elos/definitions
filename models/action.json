@@ -36,7 +36,7 @@
         }
     ],
 
-    "links": [
+    "relations": [
         {
             "name": "owner",
             "multiplicity": "one",

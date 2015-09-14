@@ -28,7 +28,7 @@
         }
     ],
 
-    "links": [
+    "relations": [
         {
             "name": "class",
             "multiplicity": "one",
