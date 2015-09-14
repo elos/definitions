@@ -1,0 +1,1 @@
+These are the requisite definitions for a dynamic ontology. Please see the [discussion here](https://github.com/elos/documentation/blob/master/guide/2%20-%20Data%20Model.md#meta-models-toward-a-dynamic-ontology).
