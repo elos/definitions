@@ -1,9 +1,7 @@
 {
-    "version": "1.0.0",
-
     "kind": "group",
     "space": "groups",
-    "domains": ["groups"],
+    "domains": [ "groups" ],
 
     "traits": [
         {
@@ -15,20 +13,20 @@
             "type": "datetime"
         },
         {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
             "name": "name",
             "type": "string"
         },
         {
             "name": "access",
-            "type": "string"
-        },
-        {
-            "name": "domain",
-            "type": "string"
-        },
-        {
-            "name": "ids",
-            "type": "[]id"
+            "type": "integer"
         }
     ],
 
@@ -40,11 +38,17 @@
             "inverse": "groups"
         },
         {
-            "name": "users",
+            "name": "grantees",
             "multiplicity": "mul",
-            "singular": "user",
+            "singular": "grantee",
             "codomain": "users",
             "inverse": "authorizations"
+        },
+        {
+            "name": "contexts",
+            "multiplicity": "mul",
+            "singular": "context",
+            "codomain": "contexts"
         }
     ]
 }

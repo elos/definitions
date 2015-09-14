@@ -1,9 +1,7 @@
 {
-    "version": "1.0.0",
-
-    "kind": "session",
-    "space": "sessions",
-    "domains": ["sessions"],
+    "kind": "context",
+    "space": "contexts",
+    "domains": [ "contexts" ],
 
     "traits": [
         {
@@ -19,12 +17,16 @@
             "type": "datetime"
         },
         {
-            "name": "token",
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
+            "name": "domain",
             "type": "string"
         },
         {
-            "name": "expires_after",
-            "type": "integer"
+            "name": "ids",
+            "type": "[]id"
         }
     ],
 
@@ -32,14 +34,7 @@
         {
             "name": "owner",
             "multiplicity": "one",
-            "codomain": "users",
-            "inverse": "sessions"
-        },
-        {
-            "name": "credential",
-            "multiplicity": "one",
-            "codomain": "credentials",
-            "inverse": "sessions"
+            "codomain": "users"
         }
     ]
 }

@@ -1,9 +1,7 @@
 {
-    "version": "1.0.0",
-
     "kind": "user",
     "space": "users",
-    "domains": ["users"],
+    "domains": [ "users" ],
 
     "traits": [
         {
@@ -16,6 +14,10 @@
         },
         {
             "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
             "type": "datetime"
         },
         {
@@ -44,7 +46,7 @@
             "multiplicity": "mul",
             "singular": "authorization",
             "codomain": "groups",
-            "inverse": "users"
+            "inverse": "grantees"
         },
         {
             "name": "sessions",

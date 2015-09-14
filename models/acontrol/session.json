@@ -1,0 +1,47 @@
+{
+    "kind": "session",
+    "space": "sessions",
+    "domains": [ "sessions" ],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
+            "name": "token",
+            "type": "string"
+        },
+        {
+            "name": "expires_after",
+            "type": "integer"
+        }
+    ],
+
+    "relations": [
+        {
+            "name": "owner",
+            "multiplicity": "one",
+            "codomain": "users",
+            "inverse": "sessions"
+        },
+        {
+            "name": "credential",
+            "multiplicity": "one",
+            "codomain": "credentials",
+            "inverse": "sessions"
+        }
+    ]
+}
