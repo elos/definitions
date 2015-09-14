@@ -1,9 +1,7 @@
 {
-    "version": "1.0.0",
-
     "kind": "object",
     "space": "objects",
-    "domains": ["objects"],
+    "domains": [ "objects" ],
 
     "traits": [
         {
@@ -19,8 +17,8 @@
             "type": "datetime"
         },
         {
-            "name": "name",
-            "type": "string"
+            "name": "deleted_at",
+            "type": "datetime"
         }
     ],
 
@@ -38,22 +36,22 @@
             "inverse": "object"
         },
         {
-            "name": "relations",
+            "name": "links",
             "multiplicity": "mul",
-            "singular": "relation",
-            "codomain": "relations",
+            "singular": "link",
+            "codomain": "links",
             "inverse": "object"
+        },
+        {
+            "name": "model",
+            "multiplicity": "one",
+            "codomain": "models",
+            "inverse": "objects"
         },
         {
             "name": "ontology",
             "multiplicity": "one",
             "codomain": "ontologies",
-            "inverse": "objects"
-        },
-        {
-            "name": "class",
-            "multiplicity": "one",
-            "codomain": "classes",
             "inverse": "objects"
         }
     ]

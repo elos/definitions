@@ -1,9 +1,7 @@
 {
-    "version": "1.0.0",
-
     "kind": "relation",
     "space": "relations",
-    "domains": ["relations"],
+    "domains": [ "relations" ],
 
     "traits": [
         {
@@ -19,8 +17,24 @@
             "type": "datetime"
         },
         {
-            "name": "ids",
-            "type": "[]id"
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "multiplicity",
+            "type": "string"
+        },
+        {
+            "name": "codomain",
+            "type": "string"
+        },
+        {
+            "name": "inverse",
+            "type": "string"
         }
     ],
 
@@ -31,16 +45,17 @@
             "codomain": "users"
         },
         {
-            "name": "object",
+            "name": "model",
             "multiplicity": "one",
-            "codomain": "objects",
+            "codomain": "models",
             "inverse": "relations"
         },
         {
-            "name": "link",
-            "multiplicity": "one",
+            "name": "links",
+            "multiplicity": "mul",
+            "singular": "link",
             "codomain": "links",
-            "inverse": "relations"
+            "inverse": "relation"
         }
     ]
 }

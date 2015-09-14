@@ -1,6 +1,4 @@
 {
-    "version": "1.0.0",
-
     "kind": "attribute",
     "space": "attributes",
     "domains": ["attributes"],
@@ -16,6 +14,10 @@
         },
         {
             "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
             "type": "datetime"
         },
         {

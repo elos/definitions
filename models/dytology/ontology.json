@@ -1,8 +1,7 @@
 {
-    "version": "1.0.0",
     "kind": "ontology",
     "space": "ontologies",
-    "domains": ["ontologies"],
+    "domains": [ "ontologies" ],
 
     "traits": [
         {
@@ -16,6 +15,10 @@
         {
             "name": "updated_at",
             "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
+            "type": "datetime"
         }
     ],
 
@@ -26,16 +29,10 @@
             "codomain": "users"
         },
         {
-            "name": "person",
-            "multiplicity":"one",
-            "codomain": "persons",
-            "inverse": "ontology"
-        },
-        {
-            "name": "classes",
+            "name": "models",
             "multiplicity":"mul",
-            "singular": "class",
-            "codomain": "classes",
+            "singular": "model",
+            "codomain": "models",
             "inverse": "ontology"
         },
         {

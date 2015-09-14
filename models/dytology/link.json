@@ -1,9 +1,7 @@
 {
-    "version": "1.0.0",
-
     "kind": "link",
     "space": "links",
-    "domains": ["links"],
+    "domains": [ "links" ],
 
     "traits": [
         {
@@ -19,20 +17,12 @@
             "type": "datetime"
         },
         {
-            "name": "name",
-            "type": "string"
+            "name": "deleted_at",
+            "type": "datetime"
         },
         {
-            "name": "multiplicity",
-            "type": "string"
-        },
-        {
-            "name": "codomain",
-            "type": "string"
-        },
-        {
-            "name": "inverse",
-            "type": "string"
+            "name": "ids",
+            "type": "map[integer]id"
         }
     ],
 
@@ -43,17 +33,16 @@
             "codomain": "users"
         },
         {
-            "name": "class",
+            "name": "object",
             "multiplicity": "one",
-            "codomain": "classes",
+            "codomain": "objects",
             "inverse": "links"
         },
         {
-            "name": "relations",
-            "multiplicity": "mul",
-            "singular": "relation",
+            "name": "relation",
+            "multiplicity": "one",
             "codomain": "relations",
-            "inverse": "link"
+            "inverse": "links"
         }
     ]
 }

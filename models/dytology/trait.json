@@ -1,6 +1,4 @@
 {
-    "version": "1.0.0",
-
     "kind": "trait",
     "space": "traits",
     "domains": ["traits"],
@@ -19,20 +17,29 @@
             "type": "datetime"
         },
         {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
             "name": "name",
             "type": "string"
         },
         {
-            "name": "type",
+            "name": "primitive",
             "type": "string"
         }
     ],
 
     "relations": [
         {
-            "name": "class",
+            "name": "owner",
             "multiplicity": "one",
-            "codomain": "classes",
+            "codomain": "users"
+        },
+        {
+            "name": "model",
+            "multiplicity": "one",
+            "codomain": "models",
             "inverse": "traits"
         },
         {
