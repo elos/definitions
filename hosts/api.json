@@ -283,6 +283,51 @@
             }
         },
         {
+            "name": "data",
+            "path": "/data",
+            "actions": ["GET", "POST", "DELETE", "OPTIONS"],
+            "middleware": {
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"],
+                "OPTIONS": ["log", "cors"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"],
+                "OPTIONS": []
+            },
+            "subpoints": [
+                {
+                    "name": "tags",
+                    "path": "/tags",
+                    "actions": ["GET", "OPTIONS"],
+                    "middleware": {
+                        "GET": ["log", "cors", "session-auth"],
+                        "OPTIONS": ["log", "cors"]
+                    },
+                    "services": {
+                        "GET": ["db"],
+                        "OPTIONS": []
+                    }
+                },
+                {
+                    "name": "query",
+                    "path": "/query",
+                    "actions": ["GET", "OPTIONS"],
+                    "middleware": {
+                        "GET": ["log", "cors", "session-auth"],
+                        "OPTIONS": ["log", "cors"]
+                    },
+                    "services": {
+                        "GET": ["db"],
+                        "OPTIONS": []
+                    }
+                }
+            ]
+        },
+        {
             "name": "property",
             "path": "/property",
             "actions": ["GET", "POST", "DELETE", "OPTIONS"],
