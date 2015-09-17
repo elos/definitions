@@ -1,6 +1,8 @@
-definitions
+Definitions
 -----------
 
-This repository holds a collection of elos definitions. There is a separation between configuration and code. You should think about the space of configuration -- of domain logic -- and the space of application code, of the systems that enable that domain logic to exist. These two spaces should be separate, to allow flexibility, but they are there exists a transformation between them that is isomorphic.
+This repository contains a collection of elos definitions. Definitions can be thought of configuration, and there should be some sort of separation -- if at all possible -- between configuration and code. 
 
-You should think of elos definitions as a basis for the application code. Here we depart slightly from our algebraic analogy of vector spaces. But the idea of an isomorphism is the same. These definitions serve as the basis which code generation or other systems use to enact the actual program.
+I think about the space of configuration -- of domain logic -- and the space of application code, of the systems that enable that domain logic to exist. I think these two spaces should be separate, to allow flexibility, but there exists an isomorphic transformation between these two spaces.
+
+These definitions attempt to be the kernel of this abstracted structure, the alpha and omega of the elos ontology, the alpha and omega of the topology of the elos api. We can make use of code generation to create specific implementations based on these well-defined bases.
