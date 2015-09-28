@@ -1,0 +1,42 @@
+{
+    "kind": "tag",
+    "space": "tags",
+    "domains": [ "tags" ],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        }
+    ],
+
+    "relations": [
+        {
+            "name": "owner",
+            "multiplicity": "one",
+            "codomain": "users"
+        },
+        {
+            "name": "events",
+            "multiplicity": "mul",
+            "codomain": "events",
+            "inverse": "tags"
+        }
+    ]
+}

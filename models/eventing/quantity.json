@@ -1,0 +1,40 @@
+{
+    "kind": "quantity",
+    "space": "quantities",
+    "domains": [ "quantities" ],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
+            "name": "value",
+            "type": "float64"
+        },
+        {
+            "name": "unit",
+            "type": "string"
+        }
+    ],
+
+    "relations": [
+        {
+            "name": "owner",
+            "multiplicity": "one",
+            "codomain": "users"
+        }
+    ]
+}

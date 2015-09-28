@@ -1,0 +1,71 @@
+{
+    "kind": "event",
+    "space": "events",
+    "domains": [ "events" ],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "time",
+            "type": "datetime"
+        }
+    ],
+
+    "relations": [
+        {
+            "name": "owner",
+            "multiplicity": "one",
+            "codomain": "users"
+        },
+        {
+            "name": "prior",
+            "multiplicity": "one",
+            "codomain": "events"
+        },
+        {
+            "name": "quantity",
+            "multiplicity": "one",
+            "codomain": "quantities"
+        },
+        {
+            "name": "note",
+            "multiplicity": "one",
+            "codomain": "notes"
+        },
+        {
+            "name": "location",
+            "multiplicity": "one",
+            "codomain": "locations"
+        },
+        {
+            "name": "tags",
+            "multiplicity": "mul",
+            "codomain": "tags",
+            "inverse": "events"
+        },
+        {
+            "name": "media",
+            "multiplicity": "one",
+            "codomain": "medias"
+        }
+    ]
+}

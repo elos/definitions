@@ -1,0 +1,44 @@
+{
+    "kind": "location",
+    "space": "locations",
+    "domains": [ "locations" ],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
+            "name": "latitude",
+            "type": "float64"
+        },
+        {
+            "name": "longitude",
+            "type": "float64"
+        },
+        {
+            "name": "altitude",
+            "type": "float64"
+        }
+    ],
+
+    "relations": [
+        {
+            "name": "owner",
+            "multiplicity": "one",
+            "codomain": "users"
+        }
+    ]
+}

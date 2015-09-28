@@ -1,9 +1,7 @@
 {
-    "version": "1.0.0",
-
-    "kind": "event",
-    "space": "events",
-    "domains": ["events"],
+    "kind": "media",
+    "space": "medias",
+    "domains": [ "medias" ],
 
     "traits": [
         {
@@ -15,15 +13,19 @@
             "type": "datetime"
         },
         {
-            "name": "name",
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
+            "name": "content",
             "type": "string"
         },
         {
-            "name": "tags",
-            "type": "[]string"
-        },
-        {
-            "name": "context",
+            "name": "codec",
             "type": "string"
         }
     ],
@@ -33,12 +35,6 @@
             "name": "owner",
             "multiplicity": "one",
             "codomain": "users"
-        },
-        {
-            "name": "person",
-            "multiplicity": "one",
-            "codomain": "persons",
-            "inverse": "events"
         }
     ]
 }
