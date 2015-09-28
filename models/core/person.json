@@ -56,8 +56,7 @@
             "name": "events",
             "multiplicity": "mul",
             "singular": "event",
-            "codomain": "events",
-            "inverse": "person"
+            "codomain": "events"
         },
         {
             "name": "tasks",
