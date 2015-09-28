@@ -22,7 +22,7 @@
         },
         {
             "name": "value",
-            "type": "float64"
+            "type": "float"
         },
         {
             "name": "unit",

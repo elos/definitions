@@ -22,15 +22,15 @@
         },
         {
             "name": "latitude",
-            "type": "float64"
+            "type": "float"
         },
         {
             "name": "longitude",
-            "type": "float64"
+            "type": "float"
         },
         {
             "name": "altitude",
-            "type": "float64"
+            "type": "float"
         }
     ],
 

@@ -35,6 +35,7 @@
         {
             "name": "events",
             "multiplicity": "mul",
+            "singular": "event",
             "codomain": "events",
             "inverse": "tags"
         }
