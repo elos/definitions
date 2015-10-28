@@ -80,21 +80,6 @@
             }
         },
         {
-            "name": "classes",
-            "path": "/classes",
-            "actions": ["GET", "POST", "DELETE"],
-            "middleware": {
-                "GET": ["log", "cors", "session-auth"],
-                "POST": ["log", "cors", "session-auth"],
-                "DELETE": ["log", "cors", "session-auth"]
-            },
-            "services": {
-                "GET": ["db"],
-                "POST": ["db"],
-                "DELETE": ["db"]
-            }
-        },
-        {
             "name": "events",
             "path": "/events",
             "actions": ["GET", "POST", "DELETE"],
