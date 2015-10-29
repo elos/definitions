@@ -73,12 +73,6 @@
             "inverse": "person"
         },
         {
-            "name": "calendar",
-            "multiplicity": "one",
-            "codomain":"calendars",
-            "inverse": "person"
-        },
-        {
             "name": "ontology",
             "multiplicity": "one",
             "codomain": "ontologies"

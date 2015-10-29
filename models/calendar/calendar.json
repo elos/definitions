@@ -1,9 +1,7 @@
 {
-    "version": "1.0.0",
-
     "kind": "calendar",
     "space": "calendars",
-    "domains": ["calendars"],
+    "domains": [ "calendars" ],
 
     "traits": [
         {
@@ -16,6 +14,10 @@
         },
         {
             "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
             "type": "datetime"
         },
         {
@@ -39,20 +41,14 @@
             "codomain": "users"
         },
         {
-            "name": "person",
-            "multiplicity": "one",
-            "codomain": "persons",
-            "inverse": "calendar"
-        },
-        {
             "name": "base_schedule",
             "multiplicity": "one",
             "codomain": "schedules"
         },
         {
-            "name": "current_fixture",
+            "name": "manifest_fixture",
             "multiplicity": "one",
-            "codomain":"fixtures"
+            "codomain": "fixtures"
         }
     ]
 }

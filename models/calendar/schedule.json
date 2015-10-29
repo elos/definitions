@@ -18,6 +18,10 @@
             "type": "datetime"
         },
         {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
             "name": "name",
             "type": "string"
         },

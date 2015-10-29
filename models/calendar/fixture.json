@@ -19,6 +19,10 @@
             "type": "datetime"
         },
         {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
             "name": "name",
             "type": "string"
         },
@@ -31,10 +35,6 @@
             "type": "datetime"
         },
         {
-            "name": "description",
-            "type": "string"
-        },
-        {
             "name": "rank",
             "type": "integer"
         },
@@ -43,11 +43,11 @@
             "type": "boolean"
         },
         {
-            "name": "expires",
+            "name": "expires_at",
             "type": "datetime"
         },
         {
-            "name": "date_exceptions",
+            "name": "exceptions",
             "type": "[]datetime"
         }
     ],
