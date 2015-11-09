@@ -33,6 +33,23 @@
             }
         },
         {
+            "name": "groups",
+            "path": "/groups",
+            "actions": ["GET", "POST", "DELETE", "OPTIONS"],
+            "middleware": {
+                "GET": ["log", "cors", "session-auth"],
+                "POST": ["log", "cors", "session-auth"],
+                "DELETE": ["log", "cors", "session-auth"],
+                "OPTIONS": ["log", "cors"]
+            },
+            "services": {
+                "GET": ["db"],
+                "POST": ["db"],
+                "DELETE": ["db"],
+                "OPTIONS": []
+            }
+        },
+        {
             "name": "actions",
             "path": "/actions",
             "actions": ["GET", "POST", "DELETE"],
@@ -326,6 +343,19 @@
                 "GET": ["db"],
                 "POST": ["db"],
                 "DELETE": ["db"],
+                "OPTIONS": []
+            }
+        },
+        {
+            "name": "query",
+            "path": "/query",
+            "actions": ["POST", "OPTIONS"],
+            "middleware": {
+                "POST": ["log", "cors", "session-auth"],
+                "OPTIONS": ["log", "cors"]
+            },
+            "services": {
+                "POST": ["db"],
                 "OPTIONS": []
             }
         }
