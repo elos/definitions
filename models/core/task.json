@@ -19,16 +19,24 @@
             "type": "datetime"
         },
         {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
             "name": "name",
             "type": "string"
         },
         {
-            "name": "start_time",
+            "name": "deadline",
             "type": "datetime"
         },
         {
-            "name": "end_time",
-            "type": "datetime"
+            "name": "stages",
+            "type": "[]datetime"
+        },
+        {
+            "name": "complete",
+            "type": "boolean"
         }
     ],
 
@@ -45,9 +53,9 @@
             "inverse": "tasks"
         },
         {
-            "name": "task_dependencies",
+            "name": "prerequisites",
             "multiplicity": "mul",
-            "singular": "task_dependency",
+            "singular": "prerequisite",
             "codomain": "tasks"
         }
     ]
