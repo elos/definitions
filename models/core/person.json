@@ -90,6 +90,12 @@
             "name": "current_actionable",
             "multiplicity": "one",
             "codomain": "actionable"
+        },
+        {
+            "name": "calendar",
+            "multiplicity": "one",
+            "codomain": "calendars"
         }
+
     ]
 }
