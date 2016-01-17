@@ -1,0 +1,47 @@
+{
+    "kind": "habit",
+    "space": "habits",
+    "domains": [ "habits" ],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        }
+    ],
+
+    "relations": [
+        {
+            "name": "owner",
+            "multiplicity": "one",
+            "codomain": "users"
+        },
+        {
+            "name": "tag",
+            "multiplicity": "one",
+            "codomain": "tags"
+        },
+        {
+            "name": "checkins",
+            "multiplicity": "mul",
+            "singular": "checkin",
+            "codomain": "events"
+        }
+    ]
+}
