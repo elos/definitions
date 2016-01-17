@@ -41,8 +41,7 @@
         {
             "name": "person",
             "multiplicity": "one",
-            "codomain": "persons",
-            "inverse": "data"
+            "codomain": "persons"
         },
         {
             "name": "event",

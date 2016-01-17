@@ -1,9 +1,7 @@
 {
-    "version": "1.0.0",
-
     "kind": "person",
     "space": "persons",
-    "domains": ["persons"],
+    "domains": [ "persons" ],
 
     "traits": [
         {
@@ -19,20 +17,16 @@
             "type": "datetime"
         },
         {
+            "name": "first_name",
+            "type": "string"
+        },
+        {
+            "name": "last_name",
+            "type": "string"
+        },
+        {
             "name": "name",
             "type": "string"
-        },
-        {
-            "name": "phone",
-            "type": "string"
-        },
-        {
-            "name": "key",
-            "type": "string"
-        },
-        {
-            "name": "public_keys",
-            "type": "[]string"
         }
     ],
 
@@ -43,59 +37,10 @@
             "codomain": "users"
         },
         {
-            "name": "data",
+            "name": "notes",
             "multiplicity": "mul",
-            "singular": "datum",
-            "codomain": "data",
-            "inverse": "person"
-        },
-        {
-            "name": "actions",
-            "multiplicity": "mul",
-            "singular": "action",
-            "codomain": "actions",
-            "inverse": "person"
-        },
-        {
-            "name": "events",
-            "multiplicity": "mul",
-            "singular": "event",
-            "codomain": "events"
-        },
-        {
-            "name": "tasks",
-            "multiplicity": "mul",
-            "singular": "task",
-            "codomain": "tasks",
-            "inverse": "person"
-        },
-        {
-            "name": "routines",
-            "multiplicity": "mul",
-            "singular": "routine",
-            "codomain": "routines",
-            "inverse": "person"
-        },
-        {
-            "name": "ontology",
-            "multiplicity": "one",
-            "codomain": "ontologies"
-        },
-        {
-            "name": "current_action",
-            "multiplicity": "one",
-            "codomain": "actions"
-        },
-        {
-            "name": "current_actionable",
-            "multiplicity": "one",
-            "codomain": "actionable"
-        },
-        {
-            "name": "calendar",
-            "multiplicity": "one",
-            "codomain": "calendars"
+            "singular": "note",
+            "codomain": "notes"
         }
-
     ]
 }

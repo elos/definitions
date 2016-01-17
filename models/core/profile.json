@@ -1,0 +1,91 @@
+{
+    "kind": "profile",
+    "space": "profiles",
+    "domains": [ "profiles" ],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "phone",
+            "type": "string"
+        }
+    ],
+
+    "relations": [
+        {
+            "name": "owner",
+            "multiplicity": "one",
+            "codomain": "users"
+        },
+        {
+            "name": "data",
+            "multiplicity": "mul",
+            "singular": "datum",
+            "codomain": "data"
+        },
+        {
+            "name": "actions",
+            "multiplicity": "mul",
+            "singular": "action",
+            "codomain": "actions"
+        },
+        {
+            "name": "events",
+            "multiplicity": "mul",
+            "singular": "event",
+            "codomain": "events"
+        },
+        {
+            "name": "tasks",
+            "multiplicity": "mul",
+            "singular": "task",
+            "codomain": "tasks"
+        },
+        {
+            "name": "routines",
+            "multiplicity": "mul",
+            "singular": "routine",
+            "codomain": "routines"
+        },
+        {
+            "name": "ontology",
+            "multiplicity": "one",
+            "codomain": "ontologies"
+        },
+        {
+            "name": "current_action",
+            "multiplicity": "one",
+            "codomain": "actions"
+        },
+        {
+            "name": "current_actionable",
+            "multiplicity": "one",
+            "codomain": "actionable"
+        },
+        {
+            "name": "calendar",
+            "multiplicity": "one",
+            "codomain": "calendars"
+        }
+
+    ]
+}

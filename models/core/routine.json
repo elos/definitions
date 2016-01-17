@@ -38,12 +38,6 @@
             "codomain": "users"
         },
         {
-            "name": "person",
-            "multiplicity":"one",
-            "codomain": "persons",
-            "inverse": "routines"
-        },
-        {
             "name": "tasks",
             "multiplicity": "mul",
             "singular": "task",

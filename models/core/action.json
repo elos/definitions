@@ -45,8 +45,7 @@
         {
             "name": "person",
             "multiplicity": "one",
-            "codomain": "persons",
-            "inverse": "actions"
+            "codomain": "persons"
         },
         {
             "name": "actionable",
