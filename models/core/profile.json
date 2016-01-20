@@ -27,6 +27,10 @@
         {
             "name": "phone",
             "type": "string"
+        },
+        {
+            "name": "email",
+            "type": "string"
         }
     ],
 
@@ -86,6 +90,5 @@
             "multiplicity": "one",
             "codomain": "calendars"
         }
-
     ]
 }

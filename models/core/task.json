@@ -37,6 +37,10 @@
         {
             "name": "complete",
             "type": "boolean"
+        },
+        {
+            "name": "completed_at",
+            "type": "datetime"
         }
     ],
 
@@ -51,6 +55,12 @@
             "multiplicity": "mul",
             "singular": "prerequisite",
             "codomain": "tasks"
+        },
+        {
+            "name": "tags",
+            "multiplicity": "mul",
+            "singular": "tag",
+            "codomain": "tags"
         }
     ]
 }
