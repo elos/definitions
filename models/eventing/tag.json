@@ -31,13 +31,6 @@
             "name": "owner",
             "multiplicity": "one",
             "codomain": "users"
-        },
-        {
-            "name": "events",
-            "multiplicity": "mul",
-            "singular": "event",
-            "codomain": "events",
-            "inverse": "tags"
         }
     ]
 }

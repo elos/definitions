@@ -60,8 +60,7 @@
             "name": "tags",
             "multiplicity": "mul",
             "singular": "tag",
-            "codomain": "tags",
-            "inverse": "events"
+            "codomain": "tags"
         },
         {
             "name": "media",
