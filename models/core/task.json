@@ -35,10 +35,6 @@
             "type": "[]datetime"
         },
         {
-            "name": "complete",
-            "type": "boolean"
-        },
-        {
             "name": "completed_at",
             "type": "datetime"
         }
