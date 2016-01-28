@@ -49,6 +49,12 @@
             "name": "manifest_fixture",
             "multiplicity": "one",
             "codomain": "fixtures"
+        },
+        {
+            "name": "fixtures",
+            "multiplicity": "mul",
+            "singular": "fixture",
+            "codomain": "fixtures"
         }
     ]
 }
