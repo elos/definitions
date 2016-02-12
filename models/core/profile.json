@@ -89,6 +89,11 @@
             "name": "calendar",
             "multiplicity": "one",
             "codomain": "calendars"
+        },
+        {
+            "name": "location",
+            "multiplicity": "one",
+            "codomain": "locations"
         }
     ]
 }
