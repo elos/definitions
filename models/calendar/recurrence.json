@@ -1,0 +1,124 @@
+{
+    "kind": "recurrence",
+    "space": "recurrences",
+    "domains": [ "recurrences" ],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+
+
+        {
+            "name": "start",
+            "type": "datetime",
+            "doc": "the first occurrence, the reference point"
+        },
+        {
+            "name": "frequency",
+            "type": "string",
+            "doc": "required, ∈ {'secondly', 'minutely', 'hourly', 'daily', 'weekly', 'monthly', 'yearly'; this is like a unit for the interval"
+        },
+        {
+            "name": "interval",
+            "type": "integer",
+            "doc": "this like the stride of the reccurrence"
+        },
+
+
+
+        {
+            "name": "until",
+            "type": "datetime",
+            "doc": "optional, bounds recurrence in inclusive manner; represents termination; if synchronizes with a recurrence, _that_ recurrence is the last one"
+        },
+        {
+            "name": "count",
+            "type": "integer",
+            "doc": "optional, terminates the set to `count` cardinality; includes `start` recurrence"
+        },
+
+
+
+        {
+            "name": "by_second",
+            "type": "[]integer",
+            "doc": "∈ [-59,59]"
+        },
+        {
+            "name": "by_hour",
+            "type": "[]integer",
+            "doc": "∈ [-23,23]"
+        },
+        {
+            "name": "by_day",
+            "type": "[]integer",
+            "doc": "∈ [-6,6]"
+        },
+        {
+            "name": "by_month_day",
+            "type": "[]integer",
+            "doc": "∈ [-31, -1] ∪ [1, 31]"
+        },
+        {
+            "name": "by_year_day",
+            "type": "[]integer",
+            "doc": "∈ [-366,-1] ∪ [1,366]"
+        },
+        {
+            "name": "by_week_num",
+            "type": "[]integer"
+        },
+        {
+            "name": "by_month_num",
+            "type": "[]integer",
+            "doc": "∈ [-53, -1] ∪ [1,53]"
+        },
+        {
+            "name": "by_set_pos",
+            "type": "[]integer"
+        },
+        {
+            "name": "week_start",
+            "type": "integer"
+        },
+
+
+        {
+            "name": "exclusions",
+            "type": "[]datetime"
+        },
+        {
+            "name": "inclusions",
+            "type": "[]datetime"
+        },
+
+
+        {
+            "name": "limit",
+            "type": "datetime",
+            "doc": "this is a cached value of the final term of the event, if calculated it can be used to quickly disqualify an reccurence in a search, elos optimization"
+        }
+    ],
+
+    "relations": [
+        {
+            "name": "owner",
+            "multiplicity": "one",
+            "codomain": "users"
+        }
+    ]
+}

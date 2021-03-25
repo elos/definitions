@@ -35,6 +35,14 @@
             "type": "datetime"
         },
         {
+            "name": "start_offset",
+            "type": "integer"
+        },
+        {
+            "name": "end_offset",
+            "type": "integer"
+        },
+        {
             "name": "rank",
             "type": "integer"
         },

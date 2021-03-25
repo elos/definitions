@@ -46,6 +46,31 @@
             "codomain": "schedules"
         },
         {
+            "name": "daily_schedule",
+            "multiplicity": "one",
+            "codomain": "schedules"
+        },
+        {
+            "name": "weekly_schedule",
+            "multiplicity": "one",
+            "codomain": "schedules"
+        },
+        {
+            "name": "monthly_schedule",
+            "multiplicity": "one",
+            "codomain": "schedules"
+        },
+        {
+            "name": "yearly_schedule",
+            "multiplicity": "one",
+            "codomain": "schedules"
+        },
+        {
+            "name": "schedule",
+            "multiplicity": "one",
+            "codomain": "schedules"
+        },
+        {
             "name": "manifest_fixture",
             "multiplicity": "one",
             "codomain": "fixtures"

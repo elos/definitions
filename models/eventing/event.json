@@ -27,6 +27,10 @@
         {
             "name": "time",
             "type": "datetime"
+        },
+        {
+            "name": "data",
+            "type": "json"
         }
     ],
 

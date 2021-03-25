@@ -1,0 +1,49 @@
+{
+    "kind": "integration",
+    "space": "integrations",
+    "domains": [ "integrations" ],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "domain",
+            "type": "string"
+        },
+        {
+            "name": "vendor",
+            "type": "string"
+        }
+    ],
+
+    "relations": [
+        {
+            "name": "owner",
+            "multiplicity": "one",
+            "codomain": "users"
+        },
+        {
+            "name": "integration_credential",
+            "multiplicity": "one",
+            "codomain": "integration_credentials"
+        }
+    ]
+}

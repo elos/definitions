@@ -1,0 +1,48 @@
+{
+    "kind": "oauth",
+    "space": "oauths",
+    "domains": [ "oauths", "integration_credentials" ],
+
+    "traits": [
+        {
+            "name": "id",
+            "type": "id"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime"
+        },
+        {
+            "name": "updated_at",
+            "type": "datetime"
+        },
+        {
+            "name": "deleted_at",
+            "type": "datetime"
+        },
+        {
+            "name": "access_token",
+            "type": "string"
+        },
+        {
+            "name": "token_type",
+            "type": "string"
+        },
+        {
+            "name": "refresh_token",
+            "type": "string"
+        },
+        {
+            "name": "expiry",
+            "type": "datetime"
+        }
+    ],
+
+    "relations": [
+        {
+            "name": "owner",
+            "multiplicity": "one",
+            "codomain": "users"
+        }
+    ]
+}
